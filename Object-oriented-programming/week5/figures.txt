@@ -1,0 +1,7 @@
+Circle 10 12 25
+Circle 20 21 4
+Rectangle 10 15 30
+
+Circle 10 12 25
+Circle 1440 21 4
+Rectangle 10 15 30
