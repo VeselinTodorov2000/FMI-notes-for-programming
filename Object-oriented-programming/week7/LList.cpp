@@ -1,5 +1,6 @@
 #pragma once
 #include "LList.h"
+#include <exception>
 
 template<typename T>
 LList<T>::LList()
@@ -77,6 +78,10 @@ void LList<T>::push_back(const T& newElem)
 template<typename T>
 void LList<T>::pop()
 {
+    if(first == nullptr)
+    {
+        throw std::range_error("You can't take element from an empty list");
+    }
     Box<T>* toDelete = first;
     first = first->next;
     delete[] toDelete; 
@@ -85,6 +90,10 @@ void LList<T>::pop()
 template<typename T>
 void LList<T>::pop_back() 
 {
+    if(first == nullptr)
+    {
+        throw std::range_error("You can't take element from an empty list");
+    }
     Box<T>* current = first;
     while(current->next->next != nullptr)
     {

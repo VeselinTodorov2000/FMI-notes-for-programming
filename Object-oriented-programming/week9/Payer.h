@@ -9,5 +9,8 @@ class Payer
     std::function<bool(size_t, size_t)> payer_member_rule;
     
     public:
-    
+    std::function<bool(size_t, size_t)> getPMR() const
+    {
+        return payer_member_rule;
+    }
 };
