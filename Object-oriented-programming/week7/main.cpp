@@ -4,6 +4,7 @@
 
 int main()
 {
+
     LList<int> h;
     h.push_back(10);
     h.push_back(20);
@@ -13,7 +14,17 @@ int main()
     h.push_back(60);
     h.push_back(70);
     h.push_back(80);
-    h.pop();
+
+    for(LList<int>::Iterator it = h.begin(); it != h.end(); ++it)
+    {
+        std::cout << *it << std::endl;
+    }
+
+    for(int x : h)
+    {
+        std::cout << x*10 << std::endl;
+    }
+    /*h.pop();
     h.pop_back();
     std::cout << h.size() << std::endl;
     h.print();
@@ -21,6 +32,6 @@ int main()
     LList<int> h1(h);
     h1.print();
     h1.clear();
-    std::cout << h1.size() << std::endl;
+    std::cout << h1.size() << std::endl;*/
     return 0;
 }

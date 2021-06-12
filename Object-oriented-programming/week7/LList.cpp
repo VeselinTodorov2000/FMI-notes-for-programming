@@ -152,3 +152,40 @@ bool LList<T>::empty() const
 {
     return first == nullptr;
 }
+
+template<typename T>
+LList<T>::Iterator::Iterator(Box<T>* other)
+{
+    current = other;
+}
+
+template<typename T>
+bool LList<T>::Iterator::operator!=(const LList<T>::Iterator& other)
+{
+    return this->current != other.current;
+}
+
+template<typename T>
+typename LList<T>::Iterator LList<T>::Iterator::operator++()
+{
+    current = current->next;
+    return *this;
+}
+
+template<typename T>
+T LList<T>::Iterator::operator*()
+{
+    return current->data;
+}
+
+template<typename T>
+typename LList<T>::Iterator LList<T>::begin()
+{
+    return Iterator(this->first);
+}
+
+template<typename T>
+typename LList<T>::Iterator LList<T>::end()
+{
+    return Iterator(nullptr);
+}

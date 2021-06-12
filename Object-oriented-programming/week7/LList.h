@@ -24,4 +24,18 @@ class LList
     size_t size() const;
     const Box<T>* front() const;
     bool empty() const;
+
+    class Iterator
+    {
+        private:
+        Box<T>* current;
+
+        public:
+        Iterator(Box<T>*);
+        bool operator!=(const Iterator&);
+        Iterator operator++();
+        T operator*();
+    };
+    Iterator begin();
+    Iterator end();
 };

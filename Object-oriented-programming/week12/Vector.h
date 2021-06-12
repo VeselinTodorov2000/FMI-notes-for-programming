@@ -32,6 +32,22 @@ class Vector
     void push_back(const T&);
     void pop_back();
     
-    void toFile(const char*);    
+    void toFile(const char*); 
+
+    class Iterator
+    {
+        private:
+        Vector<T>& vector;
+        size_t position;
+
+        public:
+        Iterator(Vector<T>&, size_t);
+        T& operator*();
+        Iterator& operator++();
+        bool operator!=(const Iterator&);
+    };   
+
+    Iterator begin();
+    Iterator end();
 };
 

@@ -139,3 +139,41 @@ void Vector<T>::toFile(const char* fileName)
         std::cout << "File " << fileName << " not opened" << std::endl;
     }
 }
+
+template<typename T>
+Vector<T>::Iterator::Iterator(Vector<T>& _vector, size_t _position) : vector(_vector), position(_position) { }
+
+template<typename T>
+T& Vector<T>::Iterator::operator*()
+{
+    return vector.data[position];
+}
+
+template<typename T>
+typename Vector<T>::Iterator& Vector<T>::Iterator::operator++()
+{
+    position++;
+    return *this;
+}
+
+template<typename T>
+bool Vector<T>::Iterator::operator!=(const Iterator& other)
+{
+    if(&this->vector != &other.vector)
+    {
+        return true;
+    }
+    return position != other.position;
+}
+
+template<typename T>
+typename Vector<T>::Iterator Vector<T>::begin()
+{
+    return Iterator(*this, 0);
+}
+
+template<typename T>
+typename Vector<T>::Iterator Vector<T>::end()
+{
+    return Iterator(*this, size);
+}
