@@ -5,21 +5,21 @@
 
 void constructor_shouldReserve4Elements_whenUseDefaultConstructor()
 {
-    Vector v(4);
+    Vector<int> v(4);
     assert(v.maxSize() == 4);
     std::cout << "constructor_shouldReserve4Elements_whenUseDefaultConstructor" << " PASS" << std::endl;
 }
 
 void constructor_shouldBeEmpty_whenUseDefaultConstructor()
 {
-    Vector v(4);
+    Vector<int> v(4);
     assert(v.isEmpty() == true);
     std::cout << "constructor_shouldBeEmpty_whenUseDefaultConstructor" << " PASS" << std::endl;
 }
 
 void operatorPlus_shouldHaveSize5_whenWeAdd5Elements()
 {
-    Vector v(4);
+    Vector<int> v(4);
     assert(v.maxSize() == 4);
     v.push_back(5)
     .push_back(4)
@@ -35,7 +35,7 @@ void operatorPlus_shouldHaveSize5_whenWeAdd5Elements()
 
 void popBack_shouldHaveSize5_whenWeAddAndRemove5Elements()
 {
-    Vector v(4);
+    Vector<int> v(4);
     assert(v.maxSize() == 4);
     v.push_back(5)
     .push_back(4)
@@ -49,7 +49,7 @@ void popBack_shouldHaveSize5_whenWeAddAndRemove5Elements()
 
 void clear_shouldDeleteAllElements_whenInvoked()
 {
-    Vector v(4);
+    Vector<int> v(4);
     assert(v.maxSize() == 4);
     v.push_back(5)
     .push_back(4)
@@ -61,59 +61,59 @@ void clear_shouldDeleteAllElements_whenInvoked()
     std::cout << "clear_shouldDeleteAllElements_whenInvoked" << " PASS" << std::endl;
 }
 
-void test()
-{
-    Vector v(10);
-    v.push_back(1);
-    v.push_back(2);
-    v.push_back(3);
-    v.push_back(4);
-    v.push_back(5);
-    v.push_back(6);
-    v.push_back(7);
-    v.push_back(8);
-    v.push_back(9);
-    v.insert(5, 12);
+// void test()
+// {
+//     Vector<int> v(10);
+//     v.push_back(1);
+//     v.push_back(2);
+//     v.push_back(3);
+//     v.push_back(4);
+//     v.push_back(5);
+//     v.push_back(6);
+//     v.push_back(7);
+//     v.push_back(8);
+//     v.push_back(9);
+//     v.insert(5, 12);
 
-    for(int i = 0; i < v.currentSize(); i++)
-    {
-        std::cout << v[i] << " ";
-    }
-    std::cout << std::endl;
+//     for(int i = 0; i < v.currentSize(); i++)
+//     {
+//         std::cout << v[i] << " ";
+//     }
+//     std::cout << std::endl;
 
-    v.erase(5);
-    for(int i = 0; i < v.currentSize(); i++)
-    {
-        std::cout << v[i] << " ";
-    }
-    std::cout << std::endl;
-}
+//     v.erase(5);
+//     for(int i = 0; i < v.currentSize(); i++)
+//     {
+//         std::cout << v[i] << " ";
+//     }
+//     std::cout << std::endl;
+// }
 
 void test1()
 {
-    Vector v1(10);
+    Vector<int> v1(10);
     v1.push_back(1);
     v1.push_back(2);
     v1.push_back(3);
 
-    Vector v2(5);
+    Vector<int> v2(5);
     v2.push_back(4);
     v2.push_back(5);
     v2.push_back(6);
     v2.push_back(7);
 
-    std::cout << v1;
-    std::cout << v2;
+    // std::cout << v1;
+    // std::cout << v2;
 }
 
 int main() 
 {
-    // constructor_shouldReserve4Elements_whenUseDefaultConstructor();
-    // constructor_shouldBeEmpty_whenUseDefaultConstructor();
-    // operatorPlus_shouldHaveSize5_whenWeAdd5Elements();
-    // popBack_shouldHaveSize5_whenWeAddAndRemove5Elements();
-    // clear_shouldDeleteAllElements_whenInvoked();
+    constructor_shouldReserve4Elements_whenUseDefaultConstructor();
+    constructor_shouldBeEmpty_whenUseDefaultConstructor();
+    operatorPlus_shouldHaveSize5_whenWeAdd5Elements();
+    popBack_shouldHaveSize5_whenWeAddAndRemove5Elements();
+    clear_shouldDeleteAllElements_whenInvoked();
 
-    test1();
+    // test1();
     return 0;
 }

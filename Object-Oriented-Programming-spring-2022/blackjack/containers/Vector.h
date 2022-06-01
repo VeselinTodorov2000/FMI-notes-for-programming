@@ -16,9 +16,7 @@ class Vector
     public:
     Vector(int capacity);
     Vector(const Vector& other);
-    Vector(Vector&& other);
     Vector& operator=(const Vector& other);
-    Vector& operator=(Vector&& other);
     ~Vector();
 
     int currentSize() const;

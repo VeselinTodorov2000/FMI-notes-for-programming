@@ -51,13 +51,6 @@ Vector<T>::Vector(const Vector<T>& other)
 }
 
 template<typename T>
-Vector<T>::Vector(Vector<T>&& other)
-{
-    copy(other);
-    other.data = nullptr;
-}
-
-template<typename T>
 Vector<T>& Vector<T>::operator=(const Vector<T>& other)
 {
     if(this != &other)
@@ -65,19 +58,6 @@ Vector<T>& Vector<T>::operator=(const Vector<T>& other)
         destroy();
         copy(other);
     }
-    return *this;
-}
-
-template<typename T>
-Vector<T>& Vector<T>::operator=(Vector<T>&& other)
-{
-    if(this != &other) 
-    {
-        destroy();
-        copy(other);
-        other.data = nullptr;
-    }
-
     return *this;
 }
 
